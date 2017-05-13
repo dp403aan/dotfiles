@@ -343,7 +343,7 @@ fi
 
 set -o vi
 export PATH=$PATH:/home/${USER}/Scripts
-export PATH=$PATH:/home/${USER]/.gem/ruby/2.3.0/bin
+export PATH=$PATH:/home/${USER}/.gem/ruby/2.3.0/bin
 export HISTTIMEFORMAT="[%d-%m-%Y] %H:%M $ "
 export HISTCONTROL="ignoredups:ignorespace"
 export TERM=xterm-256color
