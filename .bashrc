@@ -94,6 +94,7 @@ alias paclist="pacman -Qe | sed -e "s-.*/\(.*\)-\1-" | cut -d ' ' -f 1 > package
 # Logs
 alias logx='tail -n 30 -f /var/log/Xorg.0.log | ccze -A'
 alias loger='tail -n 30 -f /var/log/errors.log | ccze -A'
+alias logs='cd /var/log'
 
 # Git
 alias g='cd ~/Git'
@@ -139,10 +140,7 @@ alias dirs='ls -l|grep "^d"'
 alias dots='ls .[a-zA-Z0-9_]*'
 alias shot='scrot -d 5 -b -t 20 shot_`date '+%F'`.png'
 alias rip='rip(){ mv $1 `echo $1 | sed 's/.avi$/[ripped.by.Poulpoul].avi/'`; }; rip'
-alias killcon='killall -SIGUSR1 conky'
 alias thumbs='find . -type f -iname "thumbs.db" -print0 | xargs -0 -r rm -v'
-alias derf='vi $(ls -rt1 | tail -1)'
-alias derr='cd $(ls -rt1 | tail -1)'
 alias tree="find . | sed 's/[^/]*\//|   /g;s/| *\([^| ]\)/+--- \1/'"
 alias path='echo $PATH | tr ":" "\n"'
 alias md='mkdir -pv'
@@ -150,15 +148,12 @@ alias agr='alias | grep -i'
 alias chx='chmod +x'
 alias hdd='sudo smartctl -a -d ata /dev/sda'
 alias st='scrot -t 10'
-alias st3='scrot -cd 3 -t 33'
 alias st6='scrot -cd 6 -t 33'
 alias feh='feh -q -d -g 1365x768'
 alias trk='mocp -Q %title >> ~/OUT.out 2> /dev/null'
 alias f='xrandr --size 1920x1080'
 alias l='xrandr --size 1680x1050'
 alias bc='bc -l'
-alias diff='colordiff'
-alias playmp3='for i in *.mp3; do mplayer "$i"; done'
 alias kvm64='qemu-system-x86_64 --enable-kvm -m 2048 -k fr -soundhw all -vga std -usb'
 alias kbfr='setxkbmap fr'
 alias kff='pkill fire'
@@ -194,7 +189,7 @@ mkcd ()
 function xpdf() { command xpdf "$@" & }
 
 # Usage "bkp filename.txt"
-function bkp() { cp $1 ${1}-`date +%Y%m%d%H%M`.backup ; }
+function bkp() { sudo cp $1 ${1}_`date +%d%m%Y_%H%M%S`.bkp ; }
 
 calc() 
 { 
