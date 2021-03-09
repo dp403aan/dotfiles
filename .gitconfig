@@ -1,0 +1,17 @@
+[user]
+	email = dp403aan@gmail.com
+	name = dp403aan
+
+[color "branch"]
+    current = cyan
+    local = green
+    remote = yellow
+
+[color "status"]
+	added     = green
+	changed   = red
+	unmerged  = yellow
+    untracked = magenta
+
+[alias]
+    gl="git log --date=format:'%d-%m-%Y %H:%M:%S' --pretty=format:'%Cred%h - %Cblue%an - %Cgreen%ad : %C(yellow)%s'"
